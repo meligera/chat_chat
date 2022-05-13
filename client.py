@@ -1,9 +1,10 @@
 import socket
 import threading
 
+print("""
+Welcome to the ChatRoom!
+""")
 nickname = input("Choose Your Nickname:\n")
-if nickname == 'admin':
-    password = input("Enter Password for Admin:")
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('localhost', 12345))
@@ -17,20 +18,9 @@ def recieve():
         if stop_thread:
             break
         try:
-            message = client.recv(1024).decode('ascii')
+            message = client.recv(1024).decode('utf-8')
             if message == 'NICK':
-                client.send(nickname.encode('ascii'))
-                next_message = client.recv(1024).decode('ascii')
-                if next_message == 'PASS':
-                    client.send(password.encode('ascii'))
-                    if client.recv(1024).decode('ascii') == 'REFUSE':
-                        print("Connection is Refused !! Wrong Password")
-                        stop_thread = True
-
-                elif next_message == 'BAN':
-                    print('Connection Refused due to Ban')
-                    client.close()
-                    stop_thread = True
+                client.send(nickname.encode('utf-8'))
             else:
                 print(message)
         except:
@@ -45,24 +35,16 @@ def write():
             break
 
         message = f'{nickname}: {input("")}'
-        if message[len(nickname) + 2:].startswith('/whisper'):
-            client.send(f'WHISPER {message[len(nickname) + 2 + 9:]}'.encode('ascii'))
+        if message[len(nickname) + 2:].startswith('/tell'):
+            client.send(f'TELL {nickname} {message[len(nickname) + 2 + 6:]}'.encode('utf-8'))
+        elif message[len(nickname) + 2:].startswith('/list'):
+            client.send(f'LIST {message[len(nickname) + 2 + 6:]}'.encode('utf-8'))
+        elif message[len(nickname) + 2:].startswith('/help'):
+            client.send(f'HELP {message[len(nickname) + 2 + 6:]}'.encode('utf-8'))
         else:
-            pass
-        if message[len(nickname) + 2:].startswith('#'):
-            if nickname == 'admin':
-                if message[len(nickname) + 2:].startswith('#kick'):
+            client.send(message.encode('utf-8'))
 
-                    client.send(f'KICK {message[len(nickname) + 2 + 6:]}'.encode('ascii'))
-                elif message[len(nickname) + 2:].startswith('#ban'):
 
-                    client.send(f'BAN {message[len(nickname) + 2 + 5:]}'.encode('ascii'))
-            else:
-                print("Commands can be executed by Admins only !!")
-        else:
-            client.send(message.encode('ascii'))
-
-# ПОЧЕМУ Я ИГРАЮ В РУЛЕТКУ?!
 recieve_thread = threading.Thread(target=recieve)
 recieve_thread.start()
 write_thread = threading.Thread(target=write)
