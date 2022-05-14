@@ -33,9 +33,13 @@
     ```sh
    python server.py
    ```
-4. Теперь можем принимать подключения
+4. Теперь можем принимать подключения от клиентов:
     ```sh
    python client.py
    ```
 
 ## 2. Теоретическая часть
+Прицип работы <b>TCP Socket:</b>
+<div align="left">
+<a href="https://ibb.co/5KXGvqL"><img src="https://i.ibb.co/LNDY641/image.png" alt="image" border="0"></a>
+</div>
