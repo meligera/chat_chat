@@ -108,3 +108,5 @@ recieve_thread.start()
 write_thread = threading.Thread(target=write)
 write_thread.start()
 ```
+
+## 4. Скриншоты работы в разных ситуациях
