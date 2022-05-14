@@ -59,3 +59,34 @@
 физические ресурсы процессора.
 * В Python для этого есть модуль <b>Threading</b>, который использует
 потоки, а не процессы. Threading (от англ. thread - нить, жила)
+
+## 3. Практическая часть
+### Серверная часть
+
+```sh
+# Импортирование модулей
+import threading
+import socket
+
+PORT = 12345
+
+# "Привязка" адреса и порта к серверу
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(('localhost', PORT))
+
+# Ожидание подключений
+server.listen()
+
+# Списки "технический клиента", "простой - nickname"
+clients = []
+nicknames = []
+
+# Функция отправки сообщений всем
+def broadcast(message):
+    for client in clients:
+        client.send(message)
+       
+# Функция отправки определенному пользователю
+def send(message, client):
+    client.send(message.encode('utf-8'))
+```
