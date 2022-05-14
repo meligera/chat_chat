@@ -24,7 +24,7 @@ def handle(client):
                 name_to_whisper = msg.decode('utf-8')
                 words = name_to_whisper.split(' ', 3)
                 # There are strings that user doesn't see, so we split
-                # them [0] is a command, [1] nickname of sender,
+                # them: [0] is a command, [1] nickname of sender,
                 # [2] is a receiver client, [3] is the rest of the message
                 # we don't split it
                 print(words)  # Debugging purposes
@@ -41,7 +41,7 @@ A list of available commands:
 /list       Display users in chat
                 '''.encode('utf-8'))
             else:
-                broadcast(message)  # If there are no commands broadcasting a message to all
+                broadcast(message)
 
         except:
             if client in clients:
