@@ -68,25 +68,21 @@
 import threading
 import socket
 
-PORT = 12345
-
-# "Привязка" адреса и порта к серверу
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('localhost', PORT))
-
-# Ожидание подключений
-server.listen()
-
-# Списки "технический клиента", "простой - nickname"
-clients = []
-nicknames = []
-
 # Функция отправки сообщений всем
-def broadcast(message):
-    for client in clients:
-        client.send(message)
+def broadcast()
        
 # Функция отправки определенному пользователю
-def send(message, client):
-    client.send(message.encode('utf-8'))
+def send()
+
+# Функция обработки команд от клиента, если команды нет то происходит пересылка сообщения всем пользователям
+def handle()
+
+# Главная функция производящая авторизацию и начинающую поток с каждым подключением
+def recieve()
+
+# Отправка отформатированного сообщения
+def whisper()
+
+#  Основной модуль вызова программы
+if __name__ == '__main__'
 ```
