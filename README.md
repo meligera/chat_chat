@@ -102,7 +102,7 @@ def recieve()
 #  Функция отправки сообщений
 def write()
 
-# Запуск две функции в потоке
+# Запуск двух функции в потоке
 recieve_thread = threading.Thread(target=recieve)
 recieve_thread.start()
 write_thread = threading.Thread(target=write)
