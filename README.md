@@ -80,11 +80,31 @@ def handle()
 # Главная функция производящая авторизацию и начинающую поток с каждым подключением
 def recieve()
 
+# Вызов потока в функции recieve()
+thread = threading.Thread(target=handle, args=(client,))
+thread.start()
+
 # Отправка отформатированного сообщения
 def whisper()
 
 #  Основной модуль вызова программы
 if __name__ == '__main__'
 ```
-###  Клиентская часть
+### Клиентская часть
+```sh
+# Импортирование модулей
+import threading
+import socket
 
+# Функция приема сообщений
+def recieve()
+
+#  Функция отправки сообщений
+def write()
+
+# Запуск две функции в потоке
+recieve_thread = threading.Thread(target=recieve)
+recieve_thread.start()
+write_thread = threading.Thread(target=write)
+write_thread.start()
+```
