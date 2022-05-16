@@ -40,9 +40,8 @@
 
 ## 2. Теоретическая часть
 Прицип работы <b>TCP Socket:</b>
-<div align="left">
-<a href="https://ibb.co/jRs9NRn"><img src="https://i.ibb.co/k1vV71N/v2.png" alt="v2" border="0"></a>
-</div>
+
+<a href="https://ibb.co/rHB82V6"><img src="https://i.ibb.co/gJ0qZxT/main-scheme.png" alt="main-scheme" border="0"></a>
 
 <hr>
 
