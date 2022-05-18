@@ -110,6 +110,17 @@ write_thread.start()
 
 ## 4. Скриншоты работы в разных ситуациях
 
+Пример общения клиентов:
+
+<a href="https://ibb.co/vXtYk8p"><img src="https://i.ibb.co/qJZ5pwK/All-demo.png" alt="All-chat" border="0"></a>
+
+Пример вывода списока клиентов:
+
+<a href="https://ibb.co/W2KcqMH"><img src="https://i.ibb.co/BCsgdQf/Screenshot-from-2022-05-18-10-42-18.png" alt="Client list" border="0"></a>
+
+Регистрация:
+
+<a href="https://ibb.co/z8j7QHt"><img src="https://i.ibb.co/rbTcFfX/Screenshot-from-2022-05-18-10-39-47.png" alt="Registration form" border="0"></a>
 
 ## 5. Выводы
 Благодаря работе над проектом понял логику имплементации потоков, важность понимания последовательности и структуры выполнения команд. Важность подготовки перед написанием кода, лучше сначала составить логику выполнения на схеме, и только потом производить реализацию в коде. 
