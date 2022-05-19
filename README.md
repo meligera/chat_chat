@@ -68,23 +68,23 @@ import threading
 import socket
 
 # Функция отправки сообщений всем
-def broadcast()
+def broadcast(message), message -> String 
        
 # Функция отправки определенному пользователю
-def send()
+def send(message, client), message -> String, client -> String 
 
 # Функция обработки команд от клиента, если команды нет то происходит пересылка сообщения всем пользователям
 def handle()
 
 # Главная функция производящая авторизацию и начинающую поток с каждым подключением
-def recieve()
+def recieve(), ничего не принимает
 
 # Вызов потока в функции recieve()
 thread = threading.Thread(target=handle, args=(client,))
 thread.start()
 
 # Отправка отформатированного сообщения
-def whisper()
+def whisper(message, name), message -> String, name -> String 
 
 #  Основной модуль вызова программы
 if __name__ == '__main__'
@@ -96,10 +96,10 @@ import threading
 import socket
 
 # Функция приема сообщений
-def recieve()
+def recieve(), ничего не принимает
 
 #  Функция отправки сообщений
-def write()
+def write(), ничего не принимает
 
 # Запуск двух функции в потоке
 recieve_thread = threading.Thread(target=recieve)
