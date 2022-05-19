@@ -39,9 +39,9 @@
    ```
 
 ## 2. Теоретическая часть
-Прицип работы <b>TCP Socket:</b>
+Прицип работы проекта:
 
-<a href="https://ibb.co/rHB82V6"><img src="https://i.ibb.co/gJ0qZxT/main-scheme.png" alt="main-scheme" border="0"></a>
+<a href="https://ibb.co/CVXrRfg"><img src="https://i.ibb.co/zPLkqzp/image.png" alt="Принцип работы проекта" border="0"></a>
 
 <hr>
 
